@@ -1,7 +1,13 @@
 type personProps = {
-  name: { firstName: string; lastName: string };
+  name: { firstName: string; lastName: string }[];
 };
 
 export default function Person(props: personProps) {
-  return <div>Name: {`${props.name.firstName} ${props.name.lastName}`}</div>;
+  return (
+    <ul>
+      {props.name.map((el) => (
+        <li>Name: {`${el.firstName} ${el.lastName}`}</li>
+      ))}
+    </ul>
+  );
 }

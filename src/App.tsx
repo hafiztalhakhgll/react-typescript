@@ -2,16 +2,22 @@ import "./App.css";
 import Greet from "./components/Greet";
 import Person from "./components/Person";
 
-const personName = {
-  firstName: "Talha",
-  lastName: "Khalid",
-};
+const personNamesList = [
+  {
+    firstName: "Talha",
+    lastName: "Khalid",
+  },
+  {
+    firstName: "Faraz",
+    lastName: "Ali",
+  },
+];
 
 function App() {
   return (
     <div className="App">
       <Greet isLoggedIn name="Talha Khalid" messageCount={10} />
-      <Person name={personName} />
+      <Person name={personNamesList} />
     </div>
   );
 }
