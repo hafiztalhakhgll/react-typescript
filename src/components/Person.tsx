@@ -1,5 +1,7 @@
+import { Name } from "../types/Person.types";
+
 type personProps = {
-  name: { firstName: string; lastName: string }[];
+  name: Name[];
 };
 
 export default function Person(props: personProps) {
