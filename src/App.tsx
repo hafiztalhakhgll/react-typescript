@@ -1,21 +1,10 @@
-import React from "react";
 import "./App.css";
-import Button from "./components/Button";
-import TextField from "./components/TextField";
+import Counter from "./components/Counter";
 
 function App() {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  };
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("button clicked", e);
-  };
-
   return (
     <div className="App">
-      <TextField value="" onChange={handleChange} />
-      <Button handleClick={handleClick} />
+      <Counter />
     </div>
   );
 }
