@@ -1,18 +1,21 @@
+import React from "react";
 import "./App.css";
-import Greet from "./components/Greet";
-import Heading from "./components/Heading";
-import Oscar from "./components/Oscar";
-import Status from "./components/Status";
+import Button from "./components/Button";
+import TextField from "./components/TextField";
 
 function App() {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("button clicked", e);
+  };
+
   return (
     <div className="App">
-      <Status status="loading" />
-      <Heading>This is heading</Heading>
-      <Oscar>
-        <Heading>This heading is in Oscar Component</Heading>
-      </Oscar>
-      <Greet name="Talha Khalid" isLoggedIn />
+      <TextField value="" onChange={handleChange} />
+      <Button handleClick={handleClick} />
     </div>
   );
 }
