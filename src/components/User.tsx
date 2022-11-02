@@ -1,32 +1,28 @@
-import { useState } from "react";
-
-type UserProps = {
-  name: string;
-  email: string;
-};
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 export default function User() {
-  const [user, setUser] = useState<UserProps | null>(null);
+  const userContext = useContext(UserContext);
 
   const handleLogin = () => {
-    setUser({
+    userContext.setUser({
       name: "Talha Khalid",
       email: "talha.khalid@greenlightlabs.tech"
     });
   };
 
   const handleLogout = () => {
-    setUser(null);
+    userContext.setUser(null);
   };
   return (
     <div>
       <button onClick={handleLogin}>Login</button>
       <button onClick={handleLogout}>Logout</button>
 
-      {user ? (
+      {userContext.user ? (
         <>
-          <p>User name is {user?.name}</p>
-          <p>User email is {user?.email}</p>
+          <p>User name is {userContext.user?.name}</p>
+          <p>User email is {userContext.user?.email}</p>
         </>
       ) : (
         <p>User is not logged in</p>
