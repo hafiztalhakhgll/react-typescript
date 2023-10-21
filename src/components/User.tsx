@@ -14,6 +14,7 @@ export default function User() {
   const handleLogout = () => {
     userContext.setUser(null);
   };
+  
   return (
     <div>
       <button onClick={handleLogin}>Login</button>
